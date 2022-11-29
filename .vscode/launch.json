@@ -13,9 +13,9 @@
             ],
             "program": "${workspaceFolder}/start.js",
             "env":{
-                "FORGE_CLIENT_ID":"",
-                "FORGE_CLIENT_SECRET":"",
-                "FORGE_CALLBACK_URL":"http://localhost:3000/api/forge/callback/oauth"
+                "APS_CLIENT_ID":"",
+                "APS_CLIENT_SECRET":"",
+                "APS_CALLBACK_URL":"http://localhost:3000/api/APS/callback/oauth"
             }
         }
     ]
