@@ -1,6 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advacacy and Support
+//
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -69,26 +70,26 @@ class AddedView {
             //when one item of table view is clicked.
 
             //highlight this element
-            forgeViewer_right.clearThemingColors(forgeViewer_right.model);
-            forgeViewer_right.showAll()
-            forgeViewer_right.setThemingColor(row.svf2Id, new THREE.Vector4(0, 1, 0, 1))   
-            forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-            forgeViewer_left.showAll()
+            apsViewer_right.clearThemingColors(apsViewer_right.model);
+            apsViewer_right.showAll()
+            apsViewer_right.setThemingColor(row.svf2Id, new THREE.Vector4(0, 1, 0, 1))   
+            apsViewer_left.clearThemingColors(apsViewer_left.model);
+            apsViewer_left.showAll()
 
             //zooming to the element by bounding-box 
             const selectedItem = global_AddedView._items.find(i => i.svf2Id == row.svf2Id)
             if (selectedItem) {
                  var fragbBox = new THREE.Box3();   
-                fragbBox.max.x = selectedItem.bboxMax.x - forgeViewer_left.model.getGlobalOffset().x
-                fragbBox.max.y = selectedItem.bboxMax.y - forgeViewer_left.model.getGlobalOffset().y
-                fragbBox.max.z = selectedItem.bboxMax.z - forgeViewer_left.model.getGlobalOffset().z
-                fragbBox.min.x = selectedItem.bboxMin.x - forgeViewer_left.model.getGlobalOffset().x
-                fragbBox.min.y = selectedItem.bboxMin.y - forgeViewer_left.model.getGlobalOffset().y
-                fragbBox.min.z = selectedItem.bboxMin.z - forgeViewer_left.model.getGlobalOffset().z
-                var fragbBox = getBoundingBoxByViewerAPI(forgeViewer_right, row.svf2Id)
+                fragbBox.max.x = selectedItem.bboxMax.x - apsViewer_left.model.getGlobalOffset().x
+                fragbBox.max.y = selectedItem.bboxMax.y - apsViewer_left.model.getGlobalOffset().y
+                fragbBox.max.z = selectedItem.bboxMax.z - apsViewer_left.model.getGlobalOffset().z
+                fragbBox.min.x = selectedItem.bboxMin.x - apsViewer_left.model.getGlobalOffset().x
+                fragbBox.min.y = selectedItem.bboxMin.y - apsViewer_left.model.getGlobalOffset().y
+                fragbBox.min.z = selectedItem.bboxMin.z - apsViewer_left.model.getGlobalOffset().z
+                var fragbBox = getBoundingBoxByViewerAPI(apsViewer_right, row.svf2Id)
                 fragbBox.expandByScalar(3) 
-                forgeViewer_right.navigation.fitBounds(true, fragbBox)
-                forgeViewer_left.navigation.fitBounds(true, fragbBox)
+                apsViewer_right.navigation.fitBounds(true, fragbBox)
+                apsViewer_right.navigation.fitBounds(true, fragbBox)
             } 
         })
     }

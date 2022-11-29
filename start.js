@@ -1,7 +1,8 @@
 
 /////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advocacy and Support
+//
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -27,7 +28,7 @@ var bodyParser = require('body-parser');
 app.use(cookieParser());
 // app.set('trust proxy', 1) // trust first proxy - HTTPS on Heroku 
 app.use(session({
-  secret: 'autodeskforge',
+  secret: 'autodeskaps',
   cookie: {
     httpOnly: true,
     secure: false,
@@ -44,10 +45,10 @@ app.use(bodyParser());
 
 app.use('/', express.static(__dirname+ '/public') );
    
-app.use('/api/forge', require('./routes/endpoints/oauth'));
-app.use('/api/forge', require('./routes/endpoints/datamanagement'));
-app.use('/api/forge', require('./routes/endpoints/user'));
-app.use('/api/forge', require('./routes/endpoints/index-api'));
+app.use('/api/aps', require('./routes/endpoints/oauth'));
+app.use('/api/aps', require('./routes/endpoints/datamanagement'));
+app.use('/api/aps', require('./routes/endpoints/user'));
+app.use('/api/aps', require('./routes/endpoints/index-api'));
 
 
 app.set('port', process.env.PORT || 3000);

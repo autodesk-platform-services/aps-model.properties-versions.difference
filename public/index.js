@@ -1,6 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advacacy and Support
+//
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -40,8 +41,8 @@ $(document).ready(function () {
   $('#compare').css({
     position: "absolute",
     marginLeft: 0, marginTop: 0,
-    top: $('#forgeViewer_left').position().top + $('#col_viewer').height() / 4.0,
-    left: $('#forgeViewer_left').position().left + $('#col_viewer').width() / 2.0 - 40
+    top: $('#apsViewer_left').position().top + $('#col_viewer').height() / 4.0,
+    left: $('#apsViewer_left').position().left + $('#col_viewer').width() / 2.0 - 40
   })
 
   //initialize headers of table views
@@ -61,7 +62,7 @@ $(document).ready(function () {
     global_ChangedView.produceView([])
 
     $.ajax({
-      url: '/api/forge/index/' + project_id + '/true',
+      url: '/api/aps/index/' + project_id + '/true',
       type: 'POST',
       dataType: 'json',
       data: {
@@ -86,28 +87,28 @@ $(document).ready(function () {
 function showDiff() { 
 
   //reset all emlements with default appearance 
-  forgeViewer_left.showAll()
-  forgeViewer_right.showAll() 
-  forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-  forgeViewer_right.clearThemingColors(forgeViewer_right.model);
+  apseViewer_left.showAll()
+  apsViewer_right.showAll() 
+  apsViewer_left.clearThemingColors(apsViewer_left.model);
+  apsViewer_right.clearThemingColors(apsViewer_right.model);
 
   //if [all added] is ticked, show all added elements in right view
   if ($('#alladded')[0].checked) {
     global_AddedView._items.forEach(i => {
-      forgeViewer_right.setThemingColor(i.otgId, new THREE.Vector4(0, 1, 0, 1))
+      apsViewer_right.setThemingColor(i.otgId, new THREE.Vector4(0, 1, 0, 1))
     })
   }
   //if [all removed] is ticked, show all removed elements in left view 
   if ($('#allremoved')[0].checked) {
     global_RemovedView._items.forEach(i => {
-      forgeViewer_left.setThemingColor(i.otgId, new THREE.Vector4(1, 0, 0, 1))
+      apsViewer_left.setThemingColor(i.otgId, new THREE.Vector4(1, 0, 0, 1))
     })
   }
   //if [all changed] is ticked, show all changed elements in both views 
   if ($('#allchanged')[0].checked) { 
     global_ChangedView._items.forEach(i => {
-      forgeViewer_left.setThemingColor(i.otgId, new THREE.Vector4(0, 0, 1, 1))
-      forgeViewer_right.setThemingColor(i.otgId, new THREE.Vector4(0, 0, 1, 1))
+      apsViewer_left.setThemingColor(i.otgId, new THREE.Vector4(0, 0, 1, 1))
+      apsViewer_right.setThemingColor(i.otgId, new THREE.Vector4(0, 0, 1, 1))
     })
   }
 
@@ -115,7 +116,7 @@ function showDiff() {
 
 function showUser() {
   jQuery.ajax({
-    url: '/api/forge/user/profile',
+    url: '/api/aps/user/profile',
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
       $('#userInfo').html(img + profile.name);

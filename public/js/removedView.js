@@ -1,6 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////
-// Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Copyright 2022 Autodesk Inc
+// Written by Develope Advacacy and Support
+//
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -72,18 +73,18 @@ class RemovedView {
     $('#removedView').on('click-row.bs.table', function (e, row, $element, field) {
 
       //when one item of table view is clicked.
-      forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-      forgeViewer_left.showAll()
+      apsViewer_left.clearThemingColors(apsViewer_left.model);
+      apsViewer_left.showAll()
 
-      forgeViewer_right.clearThemingColors(forgeViewer_right.model);
-      forgeViewer_right.showAll()
-      forgeViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(1, 0, 0, 1))
+      apsViewer_right.clearThemingColors(apsViewer_right.model);
+      apsViewer_right.showAll()
+      apsViewer_left.setThemingColor(row.svf2Id, new THREE.Vector4(1, 0, 0, 1))
 
       //zooming to the element by bounding-box  
-      var fragbBox = getBoundingBoxByViewerAPI(forgeViewer_left, row.svf2Id)
+      var fragbBox = getBoundingBoxByViewerAPI(apsViewer_left, row.svf2Id)
       fragbBox.expandByScalar(3)
-      forgeViewer_left.navigation.fitBounds(true, fragbBox)
-      forgeViewer_right.navigation.fitBounds(true, fragbBox)
+      apsViewer_left.navigation.fitBounds(true, fragbBox)
+      apsViewer_right.navigation.fitBounds(true, fragbBox)
 
     })
   }
@@ -151,13 +152,13 @@ class RemovedView {
       onClickRow: function (e, row) {
         const svf2Id = row.svf2Id
 
-        forgeViewer_left.showAll()
-        forgeViewer_right.showAll()
+        apsViewer_left.showAll()
+        apsViewer_right.showAll()
 
-        forgeViewer_left.clearThemingColors(forgeViewer_left.model);
-        forgeViewer_right.clearThemingColors(forgeViewer_right.model);
+        apsViewer_left.clearThemingColors(apsViewer_left.model);
+        apsViewer_right.clearThemingColors(apsViewer_right.model);
 
-        forgeViewer_left.isolate(svf2Id)
+        apsViewer_left.isolate(svf2Id)
 
       }
     });

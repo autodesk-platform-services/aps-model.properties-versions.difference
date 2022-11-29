@@ -1,24 +1,24 @@
 {
-  "name": "forge-bim360.dashboard.export.excel",
-  "description": "export admin data of BIM360 account or project",
+  "name": "model.properties-versions.difference",
+  "description": "This sample demonstrates the use case of comparing two versions of a model by Model Properties API. The result is visualized as added, removed and updated items from the previous version. Change can be geometry as well as among properties.",
   "repository": "https://github.com/xiaodongliang/bim360-admin.dashboard",
   "logo": "",
   "keywords": [
       "autodesk",
-      "forge",
+      "aps",
       "bim360",
       "admin"
   ],
   "env": {
-      "FORGE_CLIENT_ID": {
-          "description": "Forge Client ID"
+      "APS_CLIENT_ID": {
+          "description": "APS Client ID"
       },
-      "FORGE_CLIENT_SECRET": {
-          "description": "Forge Client Secret"
+      "APS_CLIENT_SECRET": {
+          "description": "APS Client Secret"
       },
-      "FORGE_CALLBACK_URL": {
-        "description": "Callback URL of your Forge app, required for 3-legged OAuth",
-        "value": "https://<<YOUR HEROKU APP NAME HERE>>.herokuapp.com/api/forge/callback/oauth"
+      "APS_CALLBACK_URL": {
+        "description": "Callback URL of your APS app, required for 3-legged OAuth",
+        "value": "https://<<YOUR HEROKU APP NAME HERE>>.herokuapp.com/api/aps/callback/oauth"
      }
   },
   "website": "https://developer.autodesk.com/",
