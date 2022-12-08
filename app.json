@@ -1,7 +1,7 @@
 {
   "name": "model.properties-versions.difference",
   "description": "This sample demonstrates the use case of comparing two versions of a model by Model Properties API. The result is visualized as added, removed and updated items from the previous version. Change can be geometry as well as among properties.",
-  "repository": "https://github.com/xiaodongliang/bim360-admin.dashboard",
+  "repository": "https://github.com/autodesk-platform-services/aps-model.properties-versions.difference",
   "logo": "",
   "keywords": [
       "autodesk",
