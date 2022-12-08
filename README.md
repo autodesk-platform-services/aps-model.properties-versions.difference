@@ -19,7 +19,7 @@
 This sample demonstrates the use case of comparing two versions of a model by **Model Properties API**. The result is visualized as added, removed and updated items from the previous version. Change can be  geometry as well as among properties.
 
 # Thumbnail
-![thumbnail](./help/main.png)
+![thumbnail](./thumbnail.png)
 
 # Demonstration
 [![https://youtu.be/X2FCxfJi2g8](http://img.youtube.com/vi/z0aL5xMbQP0/0.jpg)](https://youtu.be/z0aL5xMbQP0 "APS Model Differences by Index API of BIM360")
