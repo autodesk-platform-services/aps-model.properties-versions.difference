@@ -15,7 +15,7 @@
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "extract-zip": "^2.0.1",
-    "forge-apis": "^0.4.5",
+    "forge-apis": "^0.9.9",
     "fs": "0.0.1-security",
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.6.0",
